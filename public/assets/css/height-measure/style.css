@@ -1,0 +1,369 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+
+/*==============================================================
+	Common Styles Initials
+==============================================================*/
+
+html {
+    -webkit-text-size-adjust: none;
+    /* Prevent font scaling in landscape */
+    width: 100%;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: inherit !important;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #01203d;
+    font-weight: 400;
+    background: #ffffff;
+    width: 100%;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    scrollbar-color: #01203d #e5e5e5;
+    scrollbar-width: thin;
+}
+
+body.pause {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e5e5e5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #01203d;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #01203d;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: #495057;
+}
+
+a:hover, a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+.btn:focus {
+    color: #fff;
+    box-shadow: none;
+}
+
+input,textarea,select {
+    outline: none;
+    resize: none;
+    font-family: "Inter", sans-serif;
+}
+
+a,
+input,
+button {
+    outline: none !important;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-family: "Inter", sans-serif;
+}
+
+img {
+    border: 0;
+    vertical-align: top;
+    max-width: 100%;
+    height: auto;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+p {
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+
+.slick-slide {
+    outline: none !important;
+}
+
+input[type="search"]::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type="search"]::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.search-dropdown input {
+    -webkit-appearance: textfield;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+/*==============================================================
+	Bootstrap Hack
+==============================================================*/
+.row {
+    --bs-gutter-x: 32px;
+    --bs-gutter-y: 0; 
+}
+/*==============================================================
+	Custom Style
+==============================================================*/
+.height-measure-wrap{
+    position: relative;
+    padding: 20px 0;
+}
+.height-measure-wrap .container{
+    height: 100%;
+}
+.gender-choice{
+    position: absolute;
+    top:20%;
+    right:7.5%;
+    z-index: 12;
+    padding-bottom: 30px;
+}
+.gender-choice label{
+    display: block;
+    padding-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.2;
+    color:#000;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.input-wrap{
+    position: absolute;
+    top:40%;
+    right:20px;
+    z-index: 12;
+}
+.display-result{
+    display: none;
+}
+.display-result span{
+    display: block;
+    padding: 2px 0;
+    color:#f00;
+}
+.display-result span strong{
+    color:#000;
+}
+.scale {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    gap:5px;
+}
+
+#heightScale {
+    width: 50px; /* Adjust based on your image width */
+    height: 700px;
+}
+
+.boy-container {
+    position: relative;
+    width: 270px; /* Adjust based on your image width */
+    height: 685px; /* Adjust based on your image height */
+    overflow: hidden;
+}
+
+#boy {
+    position: absolute;
+    bottom: 0;
+    width: 200px; /* Adjust based on your image width */
+    height: auto;
+    display: block;
+    transition: height 0.3s;
+}
+.input-wrap input,
+#genderSelect{
+    padding: 5px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    border:1px solid #000;
+}
+.input-wrap button{
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.2;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    border:1px solid #000;
+    background-color: #000;
+    color:#fff;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.input-wrap button:hover{
+    background-color: transparent;
+    color:#000;
+ }
+
+ .boy-info{
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    visibility: hidden;
+    font-size: 14px;
+    line-height: 1;
+    border-top: 3px solid #f00;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}  
+#boy.active .boy-info{
+    opacity: 1;
+    visibility: visible;
+}
+.markers-container {
+    position: relative;
+    height: 685px;
+    width: 20px;
+}
+
+.marker {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+.markers-container .marker:not(:first-child){
+    background-color: blue;
+}
+.markers-container .marker:first-child{
+    width: 30px;
+    height: 5px;
+}
+.tooltip {
+    visibility: hidden;
+    width: 150px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: -500%; /* Position above the marker */
+    left: 50%;
+    z-index: 12;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.marker:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+@media(max-width:991px){
+    .input-wrap,
+    .gender-choice{
+        position: relative;
+        padding-bottom: 20px;
+        inset:0;
+        text-align: center;
+    }
+}
+@media(max-width:400px){
+    .tooltip{
+        transform: translateX(0%);
+    }
+}
+#boyInfoContainer{
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    background: #000;
+    color: #fff;
+    border-radius: 15px;
+    padding: 10px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+#boy:hover #boyInfoContainer{
+    opacity: 1;
+    visibility: visible;
+}
+#boyInfoContainer p{
+    margin: 0;
+    font-size: 14px;
+}

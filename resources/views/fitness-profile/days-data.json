@@ -1,0 +1,702 @@
+[
+    {
+        "day": "MONDAY",
+        "exercices": [
+            {
+                "title": "STRETCHING",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "STRENGTH",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "WEIGHT_LIFTING",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "AEROBIC_EXERCISES",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "SPORT_PRACTICE",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "DAY_OFF",
+                "type": "CHECKBOX",
+                "durations": []
+            }
+        ]
+    },
+    {
+        "day": "TUESDAY",
+        "exercices": [
+            {
+                "title": "STRETCHING",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "STRENGTH",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "WEIGHT_LIFTING",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "AEROBIC_EXERCISES",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "SPORT_PRACTICE",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "DAY_OFF",
+                "type": "CHECKBOX",
+                "durations": []
+            }
+        ]
+    },
+    {
+        "day": "WEDNESDAY",
+        "exercices": [
+            {
+                "title": "STRETCHING",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "STRENGTH",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "WEIGHT_LIFTING",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "AEROBIC_EXERCISES",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "SPORT_PRACTICE",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "DAY_OFF",
+                "type": "CHECKBOX",
+                "durations": []
+            }
+        ]
+    },
+    {
+        "day": "THURSDAY",
+        "exercices": [
+            {
+                "title": "STRETCHING",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "STRENGTH",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "WEIGHT_LIFTING",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "AEROBIC_EXERCISES",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "SPORT_PRACTICE",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "DAY_OFF",
+                "type": "CHECKBOX",
+                "durations": []
+            }
+        ]
+    },
+    {
+        "day": "FRIDAY",
+        "exercices": [
+            {
+                "title": "STRETCHING",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "STRENGTH",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "WEIGHT_LIFTING",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "AEROBIC_EXERCISES",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "SPORT_PRACTICE",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "DAY_OFF",
+                "type": "CHECKBOX",
+                "durations": []
+            }
+        ]
+    },
+    {
+        "day": "SATURDAY",
+        "exercices": [
+            {
+                "title": "STRETCHING",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "STRENGTH",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "WEIGHT_LIFTING",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "AEROBIC_EXERCISES",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "SPORT_PRACTICE",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "DAY_OFF",
+                "type": "CHECKBOX",
+                "durations": []
+            }
+        ]
+    },
+    {
+        "day": "SUNDAY",
+        "exercices": [
+            {
+                "title": "STRETCHING",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "STRENGTH",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "WEIGHT_LIFTING",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "AEROBIC_EXERCISES",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "SPORT_PRACTICE",
+                "type": "CHECKBOX",
+                "durations": [
+                    1,
+                    5,
+                    15,
+                    20,
+                    25,
+                    30,
+                    45,
+                    60,
+                    75,
+                    90,
+                    120,
+                    150
+                ]
+            },
+            {
+                "title": "DAY_OFF",
+                "type": "CHECKBOX",
+                "durations": []
+            }
+        ]
+    }
+]

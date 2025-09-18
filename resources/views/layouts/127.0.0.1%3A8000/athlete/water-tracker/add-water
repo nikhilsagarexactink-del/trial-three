@@ -1,0 +1,1276 @@
+<style>
+    .modal-body {
+        overflow: visible !important;
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- css links & meta datas -->
+    <meta charset="UTF-8">
+<meta name="csrf-token" content="eqC98mAfzyr1EloJuvNBeP0CiUQv69taxUKzDVdn" />
+<meta name="user-timezone"
+    content="Pacific/Fiji">
+
+
+<!-- Fonts -->
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropper/3.0.0/cropper.min.css" type="text/css"> -->
+<link rel="stylesheet" href="http://127.0.0.1:8000/assets/css/cropper/cropper.css" type="text/css">
+<link rel="stylesheet" href="http://127.0.0.1:8000/assets/css/cropper/main.css" type="text/css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap5-toggle@5.0.4/css/bootstrap5-toggle.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css"
+    rel="stylesheet" />
+<!-- Styles -->
+<!-- favicon -->
+<link rel="icon" type="image/x-icon" href="http://127.0.0.1:8000/assets/images/favicon.ico">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="http://127.0.0.1:8000/plugins/fontawesome-free/css/all.min.css">
+<!-- iCheck -->
+<link rel="stylesheet" href="http://127.0.0.1:8000/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="http://127.0.0.1:8000/dist/css/adminlte.min.css">
+<!-- overlayScrollbars -->
+<link rel="stylesheet" href="http://127.0.0.1:8000/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+<!-- Daterange picker -->
+<link rel="stylesheet" href="http://127.0.0.1:8000/plugins/daterangepicker/daterangepicker.css">
+<!-- Slick slider -->
+<link rel="stylesheet" href="http://127.0.0.1:8000/plugins/slick/slick-theme.css">
+<link rel="stylesheet" href="http://127.0.0.1:8000/plugins/slick/slick.css">
+<link rel="stylesheet" href="http://127.0.0.1:8000/plugins/nouislider/nouislider.min.css">
+<!-- Custom style -->
+<link rel="stylesheet" href="http://127.0.0.1:8000/assets/css/main.css">
+<!-- summernote -->
+<link rel="stylesheet" href="http://127.0.0.1:8000/plugins/summernote/summernote-bs4.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css"
+    type="text/css">
+<link href="http://127.0.0.1:8000/assets/css/app.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.css" rel="stylesheet">
+<!-- country code tel -->
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css">
+<script>
+    var csrfToken = 'eqC98mAfzyr1EloJuvNBeP0CiUQv69taxUKzDVdn';
+</script>
+        <title>Water Tracker | Add Input</title>
+</head>
+
+<body class="">
+    <div id="app">
+        <!-- header -->
+        <div class="sidebar-collapse">
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+        <img class="animation__shake" src="http://127.0.0.1:8000/assets/images/logo.png" alt="" height="150" width="150">
+    </div>
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="font-size: 14px;">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+                            <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button" id="asideIcon"><i
+                            class="fas fa-bars"></i></a>
+                </li>
+                        <!-- <li class="nav-item d-none d-sm-inline-block">
+                <a href="#" class="nav-link">Home</a>
+            </li> -->
+        </ul>
+
+        <!-- Right navbar links -->
+                    <ul class="navbar-nav ml-auto">
+            <li>
+                    <div class="media align-items-center">
+                                                                                    <div class="media">
+                                <a href="http://127.0.0.1:8000/athlete/reward/use-your-reward" class="btn btn-secondary me-3">
+                                    Rewards <span class="badge badge-circle badge-danger ms-2">348</span>
+                                </a>
+                            </div>
+                                                    </div>
+                </li>
+                <li class="dropdown user user-menu" style="cursor:pointer;">
+                    <div class="media align-items-center">
+                                                                            <img src="http://127.0.0.1:8000/uploads/profile-pictures/1751535690decent man.jpg" alt="User Avatar"
+                                class="mr-2 img-size-32 img-circle mr-2">
+                                                <!--                         <div class="media">
+                            <button class="btn btn-secondary me-5">
+                                Rewards <span class="badge badge-circle badge-danger ms-2">348</span>
+                            </button>
+                        </div>
+                                                <div class="media-body">
+                            <h6 class="dropdown-item-title text-dark" style="font-size: 14px">
+                                Nikhilsagar
+                            </h6>
+                        </div> -->
+                    </div>
+<!-- 
+                    <ul class="dropdown-menu" style="width:200px">
+                        <li class="user-header mb-1" style="height: 140px;">
+                                                            <img src="http://127.0.0.1:8000/uploads/profile-pictures/1751535690decent man.jpg" alt="User Avatar"
+                                    class="mr-2 img-size-32 img-circle mr-2">
+                                                        <p class="m-0">
+                                Nikhilsagar
+                            </p>
+                        </li>
+
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="http://127.0.0.1:8000/athlete/profile-setting"
+                                    class="">Profile</a>
+                                                                    <a href="http://127.0.0.1:8000/athlete/user-billing"
+                                        class="">Billing</a>
+                                        <a href="http://127.0.0.1:8000/athlete/reward/my-rewards"
+                                        class="">My Rewards</a>
+                                                                                            </div>
+                            <div class="pull-right">
+                                <a href="http://127.0.0.1:8000/logout" class="">Sign out</a>
+                                <form id="logout-form" action="" method="POST" class="d-none">
+                                    <input type="hidden" name="_token" value="eqC98mAfzyr1EloJuvNBeP0CiUQv69taxUKzDVdn">                                </form>
+                            </div>
+                        </li>
+
+                    </ul> -->
+
+                </li>
+
+                <li class="dropdown user user-menu profile-dropdown" style="cursor:pointer;">
+                <div class="media align-items-center">
+                                                        <div class="media-body">
+                                <h6 class="dropdown-item-title text-dark" style="font-size: 14px">
+                                    Nikhilsagar
+                                </h6>
+                            </div>
+                        </div>
+
+                    <ul class="dropdown-menu" style="width:200px">
+                        <li class="user-header mb-1" style="height: 140px;">
+                                                            <img src="http://127.0.0.1:8000/uploads/profile-pictures/1751535690decent man.jpg" alt="User Avatar"
+                                    class="mr-2 img-size-32 img-circle mr-2">
+                                                        <p class="m-0">
+                                Nikhilsagar
+                            </p>
+                        </li>
+
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="http://127.0.0.1:8000/athlete/profile-setting"
+                                    class="">Profile</a>
+                                                                            <a href="http://127.0.0.1:8000/athlete/fitness-challenges/my-challenges" class="">
+                                            My Challenges
+                                        </a>
+                                                                                                                <a href="javascript:void(0);" onClick="showAddParent()" class="">
+                                            Invite A Parent
+                                        </a>
+                                                                                                                <a href="http://127.0.0.1:8000/athlete/user-billing" class="">Billing</a>
+                                        <a href="http://127.0.0.1:8000/athlete/user-payment-method"
+                                            class="">Payment Method</a>
+                                                                                                                <a href="http://127.0.0.1:8000/athlete/reward/my-rewards"
+                                        class="">My Rewards</a>
+                                        <a href="http://127.0.0.1:8000/athlete/notification"
+                                        class="">Notifications</a>
+                                                                                                </div>
+                            <div class="pull-right">
+                                <a href="http://127.0.0.1:8000/logout" class="">Sign out</a>
+                                <form id="logout-form" action="" method="POST" class="d-none">
+                                    <input type="hidden" name="_token" value="eqC98mAfzyr1EloJuvNBeP0CiUQv69taxUKzDVdn">                                </form>
+                            </div>
+                                                        <div class="pull-left dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Part of Groups
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-start">
+                                                                                                                        <li>
+                                                <a class="dropdown-item" href="javascript:void(0);">Testing 1</a>
+                                            </li>
+                                                                                                                                                                <li>
+                                                <a class="dropdown-item" href="javascript:void(0);">Testing by admin 2</a>
+                                            </li>
+                                                                                                            </ul>
+                            </div>
+                        
+                        </li>
+
+                    </ul>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+            </ul>
+            </nav>
+</div>
+<div id="addParentModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Make Parent Request</h5>
+                <button type="button" class="close" onClick="hideParentModal()" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body ">
+                <form id="addParentForm">
+                    <div class="form-group">
+                        <label for="eventTitle">First Name<span class="text-danger">*</span></label>
+                        <input type="text"  placeholder="First Name" name="first_name" class="form-control" required>
+                        <span class="text-danger" id="first_name-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventStart">Last Name<span class="text-danger">*</span></label>
+                        <input type="text" placeholder="Last Name" name="last_name" class="form-control">
+                        <span class="text-danger" id="last_name-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventStart">Email<span class="text-danger">*</span></span></label>
+                        <input type="email" placeholder="Email" name="email" class="form-control">
+                        <span class="text-danger" id="email-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventStart">Password<span class="text-danger">*</span></span></label>
+                        <input type="password" placeholder="Password" name="password" class="form-control">
+                        <span class="text-danger" id="password-error"></span>
+                    </div>
+                    <button type="button" onClick="hideParentModal()" class="btn btn-secondary">Cancel</button> 
+                    <button type="button" onclick="saveParent()" id="addrBtn" class="btn btn-primary">Save<span id="addBtnLoader" class="spinner-border spinner-border-sm" style="display: none;"></span></button>
+                </form>
+                <strong>Note:</strong>
+                <span class="text-muted">If you create a parent account, we will send an email to the registered email address. Once they accept your invitation, they will officially become your parent.</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function showAddParent() {
+        $('#addParentModal').modal('show');
+    }
+    function hideParentModal() {
+        $('#addParentForm')[0].reset();
+        $('#addParentModal').modal('hide');
+    }
+    function saveParent() {
+        var formData = $("#addParentForm").serializeArray();
+        if ($('#addParentForm').valid()) {
+            $('#addBtn').prop('disabled', true);
+            $('#addBtnLoader').show();
+            $.ajax({
+                url: "http://127.0.0.1:8000/common/users/request-parent",
+                type: "POST",
+                data: formData,
+                success: function(data) {
+                    if (data.success) {
+                        $('#addBtn').prop('disabled', false);
+                        $('#addBtnLoader').hide();
+                        _toast.success(data.message);
+                        hideParentModal();
+                    } else {
+                        _toast.error(data.message);
+                    }
+                },
+                error: function(err) {
+                    $('#addBtn').prop('disabled', false);
+                    $('#addBtnLoader').hide();
+                    if (err.status === 422) {
+                        var errors = $.parseJSON(err.responseText);
+                        $.each(errors.errors, function(key, val) {
+                            $("#" + key + "-error").text(val);
+                        });
+                    } else {
+                        var errors = $.parseJSON(err.responseText);
+                        _toast.error(errors.message);
+                    }
+                },
+            });
+        }
+    }
+    //let parentData = [];
+    /**
+     * Login as user
+     * @request id
+     * @response object.
+     */
+    function loginAsUser(user, type = 'user') {
+        // if(!Object.keys(parentData).length){
+        //     _toast.error('Invalid access.');
+        //     return false;
+        // }
+        let userTypeMsg = 'Are you sure you want to login as ' + (user.user_type == 'admin'? user.first_name : user.first_name + ' ' + user.last_name) + '?';
+        bootbox.confirm(userTypeMsg, function(result) {
+            if (result) {
+                $.ajax({
+                    type: "POST",
+                    url: "http://127.0.0.1:8000/common/login",
+                    data: {
+                        '_token': "eqC98mAfzyr1EloJuvNBeP0CiUQv69taxUKzDVdn",
+                        email: user.email, //parentData.email,
+                        password: false,
+                        login_as: type
+                    },
+                    success: function(response) {
+                        $('.login-as').prop('disabled', false);
+                        if (response.success) {
+                            _toast.success(response.message);
+                            console.log(response);
+                            setTimeout(function() {
+                                window.location.href =
+                                    "http://127.0.0.1:8000/athlete/dashboard";
+                            }, 500)
+                        } else {
+                            _toast.error(response.message);
+                        }
+                    },
+                    error: function(err) {
+                        var errors = $.parseJSON(err.responseText);
+                        _toast.error(errors.message);
+                        if (err.status === 422) {
+                            var errors = $.parseJSON(err.responseText);
+                            _toast.error(errors.message);
+                        }
+                    }
+                });
+            }
+        })
+    }
+</script>
+        <!-- sidebar -->
+            <aside class="main-sidebar elevation-4" style="font-size: 14px;width: 240px;">
+    <!-- Brand Logo -->
+    <a href="" class="brand-link px-2">
+        <!-- <span class="brand-text px-4">Logo</span> -->
+        <img class="animation__shake" src="http://127.0.0.1:8000/assets/images/logo.png" alt="" height="60" width="150">
+    </a>
+    <!-- Sidebar -->
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item ">
+                <a href="http://127.0.0.1:8000/athlete/dashboard"
+                    class="nav-link ">
+                    <img src="http://127.0.0.1:8000/assets/images/dashboard.png" class="" alt="">
+                    <p>Dashboard</p>
+                </a>
+            </li>
+
+
+            
+            <!--   -->
+
+
+                                                                                <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/getting-started"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Getting Started</p>
+                        </a>
+                    </li>
+                                                                <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Manage Getting Started <i class="fas fa-angle-right right"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                                                                                            <li class="nav-item">
+                                    <a href="http://127.0.0.1:8000/athlete/manage-getting-started/category"
+                                        class="nav-link "
+                                        >
+                                        <p>Manage Category</p>
+                                    </a>
+                                </li>
+                                                                                            <li class="nav-item">
+                                    <a href="http://127.0.0.1:8000/athlete/manage-getting-started"
+                                        class="nav-link "
+                                        >
+                                        <p>Manage Getting Started</p>
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/training"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Training Library</p>
+                        </a>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/fitness-challenges"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Fitness Challenge</p>
+                        </a>
+                    </li>
+                                                                <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Affiliate Program <i class="fas fa-angle-right right"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                                                                                            <li class="nav-item">
+                                    <a href="http://127.0.0.1:8000/athlete"
+                                        class="nav-link active"
+                                        >
+                                        <p>Affiliate Program</p>
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                                                                <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>User Grouping <i class="fas fa-angle-right right"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                                                                                            <li class="nav-item">
+                                    <a href="http://127.0.0.1:8000/athlete/groups/view"
+                                        class="nav-link "
+                                        >
+                                        <p>View User Grouping</p>
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/customize-dashboard"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Customize Dashboard</p>
+                        </a>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/calendar"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Calendar</p>
+                        </a>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/sleep-tracker"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Sleep Tracker</p>
+                        </a>
+                    </li>
+                                                                <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Rewards Points Management <i class="fas fa-angle-right right"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                                                                                            <li class="nav-item">
+                                    <a href="http://127.0.0.1:8000/athlete/reward/users"
+                                        class="nav-link "
+                                        >
+                                        <p>User Rewards</p>
+                                    </a>
+                                </li>
+                                                                                            <li class="nav-item">
+                                    <a href="http://127.0.0.1:8000/athlete/reward-redemption"
+                                        class="nav-link "
+                                        >
+                                        <p>Rewards Redemption</p>
+                                    </a>
+                                </li>
+                                                                                            <li class="nav-item">
+                                    <a href="http://127.0.0.1:8000/athlete/reward-store-management"
+                                        class="nav-link "
+                                        >
+                                        <p>Rewards Store Management</p>
+                                    </a>
+                                </li>
+                                                                                            <li class="nav-item">
+                                    <a href="http://127.0.0.1:8000/athlete/reward-management"
+                                        class="nav-link "
+                                        >
+                                        <p>Rewards Points Management</p>
+                                    </a>
+                                </li>
+                                                                                            <li class="nav-item">
+                                    <a href="http://127.0.0.1:8000/athlete/reward/use-your-reward"
+                                        class="nav-link "
+                                        >
+                                        <p>Use Your Rewards</p>
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/billing"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Billing</p>
+                        </a>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/motivation-section"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Motivation</p>
+                        </a>
+                    </li>
+                                                                <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Sports Performance <i class="fas fa-angle-right right"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                                                                                            <li class="nav-item">
+                                    <a href="http://127.0.0.1:8000/athlete/baseball"
+                                        class="nav-link "
+                                        >
+                                        <p>Baseball</p>
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/step-counter"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Step Counter</p>
+                        </a>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/activity-tracker/permission"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>User Activity Tracker</p>
+                        </a>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/activity-tracker/users"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>All User Activity</p>
+                        </a>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/fitness-profile"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Fitness Profile</p>
+                        </a>
+                    </li>
+                                                                <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Workout Builder <i class="fas fa-angle-right right"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                                                                                            <li class="nav-item">
+                                    <a href="http://127.0.0.1:8000/athlete/workout-exercise"
+                                        class="nav-link "
+                                        >
+                                        <p>Workout Builder</p>
+                                    </a>
+                                </li>
+                                                                                            <li class="nav-item">
+                                    <a href="http://127.0.0.1:8000/athlete/my-workouts"
+                                        class="nav-link "
+                                        >
+                                        <p>My Workouts</p>
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/journal/add"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Journal</p>
+                        </a>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/speed"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Speed</p>
+                        </a>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/water-tracker"
+                            class="nav-link   active"
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Water Tracker</p>
+                        </a>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/health-management"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Manage Health Management</p>
+                        </a>
+                    </li>
+                                                                <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Health Section <i class="fas fa-angle-right right"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                                                                                            <li class="nav-item">
+                                    <a href="http://127.0.0.1:8000/athlete/health-tracker"
+                                        class="nav-link "
+                                        >
+                                        <p>Health Tracker</p>
+                                    </a>
+                                </li>
+                                                                                            <li class="nav-item">
+                                    <a href="http://127.0.0.1:8000/athlete/food-tracker"
+                                        class="nav-link "
+                                        >
+                                        <p>Food Tracker</p>
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/message"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Ask a Coach</p>
+                        </a>
+                    </li>
+                                                                                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/athlete/recipes"
+                            class="nav-link   "
+                            >
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Recipes</p>
+                        </a>
+                    </li>
+                                                                <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <img src="http://127.0.0.1:8000/assets/images/dashboard.png"
+                                class="" alt="">
+                            <p>Testing by admin 2 <i class="fas fa-angle-right right"></i></p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                                                                                            <li class="nav-item">
+                                    <a href="/users"
+                                        class="nav-link "
+                                        target=&quot;_blank&quot;>
+                                        <p>Beginners Workout 123</p>
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+                            
+
+                            <li class="nav-item ">
+                    <a href="http://127.0.0.1:8000/athlete/activity-tracker"
+                        class="nav-link  ">
+                        <img src="http://127.0.0.1:8000/assets/images/dashboard.png" class="" alt="">
+                        <p>Activity Tracker</p>
+                    </a>
+                </li>
+            
+
+
+        </ul>
+    </nav>
+</aside>
+        <!-- Main Content Start -->
+    <div class="content-wrapper">
+
+        <div class="page-title-row d-sm-flex align-items-center justify-content-between mb-3">
+            <div class="left-side">
+                <!-- Breadcrumb Start -->
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a
+                                href="http://127.0.0.1:8000/athlete/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a
+                                href="http://127.0.0.1:8000/athlete/water-tracker">Water Tracker</a></li>
+                        <li class="breadcrumb-item active">Add Input</li>
+                    </ol>
+                </nav>
+                <!-- Breadcrumb End -->
+                <!-- Page Title Start -->
+                <h2 class="page-title text-capitalize mb-0">
+                    Water Tracking
+                </h2>
+                <!-- Page Title End -->
+            </div>
+        </div>
+
+
+        <section class="content white-bg">
+            <form id="addWaterForm" class="form-head" method="POST" novalidate autocomplete="false"
+                action="http://127.0.0.1:8000/common/water-tracker/add-water">
+                <input type="hidden" name="_token" value="eqC98mAfzyr1EloJuvNBeP0CiUQv69taxUKzDVdn">                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group mb-0">
+                                    <label class="mb-2"><span id="drinkInDate">How much water did you drink today
+                                            ?</span></label>
+                                    <div class="water-input">
+                                        <input type="text" class="form-control" placeholder="" name="water_value">
+                                        <span><strong>ounces</strong></span>
+                                    </div>
+                                    <span id="water_value-error" class="help-block error-help-block text-danger"></span>
+
+                                </div>
+                                <input type="hidden" class="form-control" id="selectedDateField" name="date">
+                                <a href="javascript:void(0)" id="inputDatepickerLink" onClick="inputDate()">Input another
+                                    date</a>
+                            </div>
+                            <div class="col-md-12" id="inputDateField" style="display:none">
+                                <div class="form-group">
+                                    <label>Date</label>
+                                    <div id="datepicker"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn_row text-center">
+                    <button type="button" class="btn btn-secondary ripple-effect-dark btn-120" id="addWaterBtn"
+                        onClick="addWater()">Submit<span id="addWaterBtnLoader" class="spinner-border spinner-border-sm"
+                            style="display: none;"></span></button>
+                    <a class="btn btn-outline-dark ripple-effect-dark btn-120 ml-2"
+                        href="http://127.0.0.1:8000/athlete/water-tracker">Cancel</a>
+                </div>
+            </form>
+            <!-- Modal -->
+                            <div class="modal fade" id="gameModal_150_9" tabindex="-1" role="dialog" aria-labelledby="gameModalTitle_150_9" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px;">
+        <div class="modal-content p-3">
+            <div class="modal-header">
+                <h5 class="modal-title" id="gameModalTitle_150_9">Play the Game to get the Rewards not get</h5>
+                <button type="button" class="close close-confirm-btn" id="closeBtn_gameModal_150_9" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-0 d-flex justify-content-center align-items-center" style="height: 500px;">
+                                    <div class="click-the-circle-game-component">
+    <div class="align-items-center mb-2">
+        <h5 class="mb-0"> Click the circle as quickly as you can</h5>
+        <div class="mb-2 description">
+            Click as many circles as possible in given time. Each click counts as one point.
+        </div>
+
+        <div class="d-flex justify-content-between mb-2">
+            <div>Score: <strong id="clickGameScore">0</strong></div>
+            <div>Time Left: <strong id="clickGameTimer">90</strong>s</div>
+        </div>
+
+        <div class="text-center mb-3">
+            <button id="startClickGame" class="btn btn-primary">Start Game</button>
+        </div>
+    </div>
+
+    <div class="click-the-circle-area border rounded position-relative" >
+        <div class="click-the-circle-target" id="clickTheCircleTarget" ></div>
+    </div>
+
+    <div class="mt-3 text-center fw-bold text-primary" id="clickGameResult"></div>
+
+    <style>
+        .click-the-circle-game-component .click-the-circle-area {
+            display: none;
+            background-color: #f8f9fa;
+            overflow: hidden;
+            height: 350px;
+            width: 450px;
+        }
+
+        .click-the-circle-game-component .click-the-circle-target {
+            background-color: #007bff;
+            border-radius: 50%;
+            position: absolute;
+            cursor: pointer;
+            transition: top 0.2s, left 0.2s, width 0.2s, height 0.2s;
+        }
+    </style>
+
+    <script>
+        var rewardDetail = {"id":9,"feature":"Log your Water Intake","feature_key":"log-water-intake","point":"","is_gamification":1,"description":"\u003Cp\u003ETesting\u003C\/p\u003E","status":"active","order":2,"created_by":1,"updated_by":1,"created_at":"2025-07-17T19:46:36.000000Z","updated_at":"2025-07-27T11:34:18.000000Z","reward_game":{"id":25,"reward_management_id":9,"game_type":"specific","game_key":"click-the-circle","min_points":2,"max_points":8,"duration":90,"score":50,"created_by":1,"updated_by":1,"created_at":"2025-07-27T11:16:54.000000Z","updated_at":"2025-07-27T11:34:18.000000Z","game":{"id":2,"title":"Click the circle as quickly as you can","description":"Click as many circles as possible in given time. Each click counts as one point.","game_key":"click-the-circle","status":"active","created_by":1,"updated_by":1,"created_at":"2025-07-18T01:15:28.000000Z","updated_at":"2025-07-18T01:15:28.000000Z"}}};
+        document.addEventListener("DOMContentLoaded", function () {
+            const wrapper = document.querySelector(".click-the-circle-game-component");
+            if (!wrapper) return;
+
+            const area = wrapper.querySelector(".click-the-circle-area");
+            const target = wrapper.querySelector("#clickTheCircleTarget");
+            const scoreDisplay = wrapper.querySelector("#clickGameScore");
+            const timerDisplay = wrapper.querySelector("#clickGameTimer");
+            const resultDisplay = wrapper.querySelector("#clickGameResult");
+            const startButton = wrapper.querySelector("#startClickGame");
+
+            let score = 0;
+            let timeLeft = rewardDetail.reward_game.duration;
+            let timer;
+            let moveDelay;
+            let isPlaying = false;
+
+            function randomPositionAndSize() {
+                const size = Math.floor(Math.random() * 20) + 40; // 40px to 60px
+                const maxLeft = area.clientWidth - size;
+                const maxTop = area.clientHeight - size;
+
+                return {
+                    left: Math.floor(Math.random() * maxLeft),
+                    top: Math.floor(Math.random() * maxTop),
+                    size: size
+                };
+            }
+
+            function showTarget() {
+                const pos = randomPositionAndSize();
+                target.style.left = `${pos.left}px`;
+                target.style.top = `${pos.top}px`;
+                target.style.width = `${pos.size}px`;
+                target.style.height = `${pos.size}px`;
+                target.style.display = "block";
+            }
+
+            function startGame() {
+                const wrapper = document.querySelector(".click-the-circle-game-component");
+                wrapper.querySelector(".click-the-circle-area").style.display = 'block';
+                wrapper.querySelector(".description").style.display = 'none';
+                startButton.style.display = 'none';
+                if (isPlaying) return;
+
+                isPlaying = true;
+                score = 0;
+                timeLeft = rewardDetail.reward_game.duration;
+                scoreDisplay.textContent = score;
+                timerDisplay.textContent = timeLeft;
+                resultDisplay.textContent = "";
+                startButton.disabled = true;
+
+                showTarget();
+
+                timer = setInterval(() => {
+                    timeLeft--;
+                    timerDisplay.textContent = timeLeft;
+                    if (timeLeft <= 0) {
+                        endGame();
+                    }
+                }, 1000);
+            }
+
+            function endGame() {
+                const wrapper = document.querySelector(".click-the-circle-game-component");
+                wrapper.querySelector(".click-the-circle-area").style.display = 'none';
+                wrapper.querySelector(".description").style.display = 'block';
+
+
+                isPlaying = false;
+                clearInterval(timer);
+                clearTimeout(moveDelay);
+                target.style.display = "none";
+                startButton.disabled = false;
+                resultDisplay.textContent = `Game Over! You scored ${score} points.`;
+
+                if(score){
+                    $.ajax({
+                        type: "POST",
+                        url: "http://127.0.0.1:8000/common/reward-management/save-reward",
+                        data: {
+                            _token: "eqC98mAfzyr1EloJuvNBeP0CiUQv69taxUKzDVdn",
+                            feature_key: "log-water-intake",
+                            module_key: "water-tracker",
+                            module_id: "",
+                            video_id : "",
+                            game_key : 'click-the-circle',
+                            score : score,
+                        },
+                        success: function(response) {
+                            $('#reviewPointsBtn').prop('disabled', false);
+                            if (response.success) {
+                                _toast.customSuccess(response.message);
+                                setTimeout(function() {
+                                    window.location.reload();
+                                }, 3000)
+                            } else {
+                                _toast.error('Somthing went wrong. please try again');
+                            }
+                        },
+                        error: function(err) {
+                            $('#reviewPointsBtn').prop('disabled', false);
+                            _toast.error('Please try again.');
+                        },
+                    });
+                }
+            }
+
+            target.addEventListener("click", () => {
+                if (!isPlaying) return;
+                score++;
+                scoreDisplay.textContent = score;
+                target.style.display = "none";
+                // Faster appearance (after 150–250ms)
+                const delay = Math.floor(Math.random() * 100) + 150;
+                moveDelay = setTimeout(showTarget, delay);
+            });
+
+            startButton.addEventListener("click", startGame);
+        });
+    </script>
+</div>
+                            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+(function () {
+    const modalId = "#gameModal_150_9";
+    const closeBtnId = "#closeBtn_gameModal_150_9";
+    let isClosingConfirmed = false;
+
+    const modal = $(modalId);
+
+    
+
+    function confirmModalClose_150_9() {
+        bootbox.confirm({
+            title: "Are you sure you want to close the game?",
+            message: "Closing now may forfeit your chance to earn rewards.",
+            buttons: {
+                confirm: {
+                    label: 'Yes, Close',
+                    className: 'btn-danger'
+                },
+                cancel: {
+                    label: 'No, Stay',
+                    className: 'btn-secondary'
+                }
+            },
+            callback: function(result) {
+                if (result) {
+                    $.ajax({
+                        type: "POST",
+                        url: "http://127.0.0.1:8000/common/reward-management/save-reward",
+                        data: {
+                            _token: "eqC98mAfzyr1EloJuvNBeP0CiUQv69taxUKzDVdn",
+                            feature_key: "log-water-intake",
+                            module_id: "",
+                            game_key : "click-the-circle",
+                            result : 'not_played',
+                        },
+                        success: function(response) {
+                            $('#reviewPointsBtn').prop('disabled', false);
+                            if (response.success) {
+                                _toast.customSuccess(response.message);
+                                setTimeout(function() {
+                                    window.location.reload();
+                                }, 3000)
+                            } else {
+                                _toast.error('Somthing went wrong. please try again');
+                            }
+                        },
+                        error: function(err) {
+                            $('#reviewPointsBtn').prop('disabled', false);
+                            _toast.error('Please try again.');
+                        },
+                    });
+                }
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $(closeBtnId).on('click', function () {
+            confirmModalClose_150_9();
+        });
+
+        modal.on('hide.bs.modal', function (e) {
+            if (!isClosingConfirmed) {
+                e.preventDefault();
+                confirmModalClose_150_9();
+                return false;
+            } else {
+                isClosingConfirmed = false;
+            }
+        });
+
+        $(modalId).modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+    });
+    
+   
+})();
+</script>
+            
+
+        </section>
+
+        
+    <!-- Main Content Start -->
+    </div>
+    <script>
+    function removePrompt() {
+        document.getElementById('global-prompt').style.display='none';   
+    }
+</script>
+    <!-- js links -->
+    <!-- Script Start -->
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+ </script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+     integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+ </script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script src="http://127.0.0.1:8000/plugins/jquery-ui/jquery-ui.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.3.2/bootbox.min.js"></script>
+
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD996ovxZ7fFt0P5tEjMmdqpoBensOtqBo&libraries=places">
+ </script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.js"></script>
+ <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/cropper/3.0.0/cropper.min.js"></script> -->
+ <script src="http://127.0.0.1:8000/assets/js/cropper/cropper.js"></script>
+ <script src="http://127.0.0.1:8000/assets/js/cropper/main.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap5-toggle@5.0.2/js/bootstrap5-toggle.ecmas.min.js"></script>
+ <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+
+ <script src="http://127.0.0.1:8000/assets/js/jsvalidation.js"></script>
+ <script src="http://127.0.0.1:8000/assets/js/app.toast.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.js"></script>
+ <script>
+     //$.widget.bridge('uibutton', $.ui.button)
+ </script>
+ <script src="http://127.0.0.1:8000/plugins/sparklines/sparkline.js"></script>
+ <script src="http://127.0.0.1:8000/plugins/moment/moment.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
+ <script src="http://127.0.0.1:8000/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+ <script src="http://127.0.0.1:8000/plugins/daterangepicker/daterangepicker.js"></script>
+ <script src="http://127.0.0.1:8000/dist/js/adminlte.js"></script>
+ <script src="http://127.0.0.1:8000/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+ <script src="http://127.0.0.1:8000/plugins/summernote/summernote-bs4.min.js"></script>
+ <!-- slick slider -->
+ <script src="http://127.0.0.1:8000/plugins/slick/slick.min.js"></script>
+ <script src="http://127.0.0.1:8000/plugins/nouislider/nouislider.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
+ <!-- DataTables  & Plugins -->
+ <script src="http://127.0.0.1:8000/../../plugins/datatables/jquery.dataTables.min.js"></script>
+ <script src="http://127.0.0.1:8000/../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+ <script src="http://127.0.0.1:8000/../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+ <script src="http://127.0.0.1:8000/../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+ <script src="http://127.0.0.1:8000/../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+ <script src="http://127.0.0.1:8000/../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+ <script src="http://127.0.0.1:8000/../../plugins/jszip/jszip.min.js"></script>
+ <!-- <script src="http://127.0.0.1:8000/../../plugins/pdfmake/pdfmake.min.js"></script>
+ <script src="http://127.0.0.1:8000/../../plugins/pdfmake/vfs_fonts.js"></script> -->
+ <script src="http://127.0.0.1:8000/../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+ <script src="http://127.0.0.1:8000/../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+ <script src="http://127.0.0.1:8000/../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+ <script src="http://127.0.0.1:8000/assets/js/tinymce/tinymce.min.js"></script>
+ <script src="http://127.0.0.1:8000/dist/js/main.js"></script>
+ <script src="https://js.stripe.com/v3/"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+ <!-- <script src="https://cdn.jsdelivr.net/npm/vimeo-jquery-api@0.10.3/dist/jquery.vimeo.api.min.js"></script> -->
+ <!-- country code tel -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+ <script src="https://unpkg.com/sortablejs@latest/Sortable.min.js"></script>
+ <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/0.7.0/chartjs-plugin-datalabels.min.js">
+ </script>  -->
+ <!-- Vimeo Player -->
+ <script src="https://player.vimeo.com/api/player.js"></script>
+ <script src="https://unpkg.com/sortablejs-make/Sortable.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/jquery-sortablejs@latest/jquery-sortable.js"></script>
+ <script type="text/javascript">
+     $.ajaxSetup({
+         headers: {
+             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+             'time-zone': $('meta[name="user-timezone"]').attr('content') // Use logged-in user's timezone
+         }
+     });
+
+     function loadHeaderText(type = "") {
+         var url = "http://127.0.0.1:8000/common/settings/headers/get";
+         $('#headerLoader').show();
+         $('#headerLoaderContainer').show();
+         $.ajax({
+             type: "GET",
+             url: url,
+             data: {
+                 type: type
+             },
+             success: function(response) {
+                 if (response.success) {
+                     $('#headerLoader').hide();
+                     $('#headerLoaderContainer').hide();
+                     $("#textPlaceholder").html("");
+                     $('#textPlaceholder').append(response.data.description);
+                 }
+             },
+             error: function() {
+                 $('#headerLoader').hide();
+                 _toast.error('Somthing went wrong.');
+             }
+         });
+     }
+
+     function displayUpsellMessage(location) {
+         $.ajax({
+             type: "GET",
+             url: "http://127.0.0.1:8000/common/upsell/display-upsell",
+             data: {
+                 location: location,
+             },
+             success: function(response) {
+                 if (response.success) {
+                     $("#upsell-message").html("");
+                     $('#upsell-message').append(response.data.html);
+                 }
+             },
+             error: function() {
+                 _toast.error('Somthing went wrong.');
+             }
+         });
+     }
+ </script>
+
+        
+    <script>
+        /**
+         * Add Water.
+         * @request form fields
+         * @response object.
+         */
+        let rewardData = {"id":9,"feature":"Log your Water Intake","feature_key":"log-water-intake","point":"","is_gamification":1,"description":"\u003Cp\u003ETesting\u003C\/p\u003E","status":"active","order":2,"created_by":1,"updated_by":1,"created_at":"2025-07-17T19:46:36.000000Z","updated_at":"2025-07-27T11:34:18.000000Z","reward_game":{"id":25,"reward_management_id":9,"game_type":"specific","game_key":"click-the-circle","min_points":2,"max_points":8,"duration":90,"score":50,"created_by":1,"updated_by":1,"created_at":"2025-07-27T11:16:54.000000Z","updated_at":"2025-07-27T11:34:18.000000Z","game":{"id":2,"title":"Click the circle as quickly as you can","description":"Click as many circles as possible in given time. Each click counts as one point.","game_key":"click-the-circle","status":"active","created_by":1,"updated_by":1,"created_at":"2025-07-18T01:15:28.000000Z","updated_at":"2025-07-18T01:15:28.000000Z"}}};
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('addWaterForm').addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                }
+            });
+        });
+
+        function addWater() {
+            var formData = $("#addWaterForm").serializeArray();
+            $('#addWaterBtn').prop('disabled', true);
+            $('#addWaterBtnLoader').show();
+            $.ajax({
+                type: "POST",
+                url: "http://127.0.0.1:8000/common/water-tracker/add-water",
+                data: formData,
+                success: function(response) {
+                    $('#addWaterBtn').prop('disabled', false);
+                    $('#addWaterBtnLoader').hide();
+                    if (response.success) {
+                        _toast.success(response.message);
+                        $('#addWaterForm')[0].reset();
+                        setTimeout(function() {
+                            if(rewardData.is_gamification == 1 && rewardData.reward_game){
+                                const userId = 150;
+                                const rewardId = rewardData.id;
+                                const modalId = '#gameModal_' + userId + '_' + rewardId;
+                                $(modalId).modal('show'); // updated here
+                            }else{
+                                window.location.href = "http://127.0.0.1:8000/athlete/water-tracker";
+                            }
+                        }, 500)
+                    } else {
+                        _toast.error('Something went wrong. please try again');
+                    }
+                },
+                error: function(err) {
+                    $('#addWaterBtn').prop('disabled', false);
+                    $('#addWaterBtnLoader').hide();
+                    if (err.status === 422) {
+                        var errors = $.parseJSON(err.responseText);
+                        $.each(errors.errors, function(key, val) {
+                            $("#" + key + "-error").text(val);
+                        });
+                    } else {
+                        _toast.error('Please try again..');
+                    }
+                },
+            });
+        };
+
+        function inputDate() {
+            $("#inputDateField").show();
+            $("#inputDatepickerLink").hide();
+        }
+
+        $(function() {
+            var todayDate = new Date();
+            todayDate = moment(todayDate).format('YYYY-MM-DD')
+            console.log('TOday date', todayDate);
+            $("#datepicker").datepicker({
+                "dateFormat": "yy-mm-dd",
+                "setDate": new Date(),
+                onSelect: function(dateString, txtDate) {
+                    if (dateString == todayDate) {
+                        $("#drinkInDate").text('How much water did you drink today ?');
+                    } else if (dateString > todayDate) {
+                        $("#drinkInDate").text('How much water will you drink ' + moment(dateString)
+                            .format('MMMM Do') + ' ?');
+                    } else {
+                        $("#drinkInDate").text('How much water did you drink ' + moment(dateString)
+                            .format('MMMM Do') + ' ?');
+                    }
+                    $("#selectedDateField").val(moment(dateString).format('YYYY-MM-DD'));
+                    $("#inputDateField").hide();
+                    $("#inputDatepickerLink").show();
+                }
+            });
+
+            $("#selectedDateField").val(moment($("#datepicker").datepicker("getDate")).format('YYYY-MM-DD'));
+        });
+    </script>
+</body>
+
+</html>

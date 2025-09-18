@@ -1,0 +1,136 @@
+[
+    {
+        "module_name" : "Manage Equipment",
+        "module_key" : "manage-equipment"
+    },
+    {
+        "module_name" : "Manage Motivation",
+        "module_key" : "manage-motivation"
+
+    },
+    {
+        "module_name" : "Manage Difficulty",
+        "module_key" : "manage-difficulty"
+    },
+    {
+        "module_name" : "Affiliate Members",
+        "module_key" : "affiliate-members"
+    },
+    {
+        "module_name" : "Affiliate Settings",
+        "module_key" : "affiliate-settings"
+    },
+    {
+        "module_name" : "Manage User Grouping",
+        "module_key" : "manage-user-grouping"
+    },
+    {
+        "module_name" : "Manage Getting Started",
+        "module_key" : "manage-getting-started"
+    },
+    {
+        "module_name" : "Manage Health Management",
+        "module_key" : "manage-health-management"
+    },
+    {
+        "module_name" : "General Settings",
+        "module_key" : "settings-general"
+    },
+    {
+        "module_name" : "Appearance",
+        "module_key" : "appearance"
+    },
+    {
+        "module_name" : "Email",
+        "module_key" : "email"
+    },
+    {
+        "module_name" : "Legal",
+        "module_key" : "legal"
+    },
+    {
+        "module_name" : "Captcha",
+        "module_key" : "captcha"
+    },
+    {
+        "module_name" : "Headers Text",
+        "module_key" : "manage-headers-text"
+    },
+    {
+        "module_name" : "Manage Promo Codes",
+        "module_key" : "manage-promo-codes"
+    },
+    {
+        "module_name" : "Plan Permissions",
+        "module_key" : "plan-permissions"
+    },
+    {
+        "module_name" : "Permissions Module Tool Tips Text",
+        "module_key" : "permissions-module-tool-tips-text"
+    },
+    {
+        "module_name" : "Upsells",
+        "module_key" : "upsells"
+    },
+    {
+        "module_name" : "Fitness Challenge",
+        "module_key" : "fitness-challenge"
+    },
+    {
+        "module_name" : "Health Management",
+        "module_key" : "manage-health-management"
+    },
+    {
+        "module_name" : "All User Activity",
+        "module_key" : "all-user-activity"
+    },
+    {
+        "module_name" : "Menu Link Builder",
+        "module_key" : "menu-link-builder"
+    },
+    {
+        "module_name" : "Customize Dashboard",
+        "module_key" : "customize-dashboard"
+    },
+    {
+        "module_name" : "User Activity Tracker",
+        "module_key" : "user-activity-tracker"
+    },
+    {
+        "module_name" : "Default Profile Pictures",
+        "module_key" : "default -profile-pictures"
+    },
+    {
+        "module_name" : "Rewards Points Management",
+        "module_key" : "rewards-points-management"
+    },
+    {
+        "module_name" : "User Reward",
+        "module_key" : "user-rewards"
+    },
+    {
+        "module_name" : "Rewards Redemption",
+        "module_key" : "rewards-redemption"
+    },
+    {
+        "module_name" : "Rewards Store Management",
+        "module_key" : "rewards-store-management"
+    },
+    {
+        "module_name" : "Use Your Rewards",
+        "module_key" : "use-your-rewards"
+    },
+    {
+        "module_name" : "Categories",
+        "module_key" : "motivation-categories"
+    },
+    {
+        "module_name" : "Categories",
+        "module_key" : "workout-categories"
+    },
+    {
+        "module_name" : "Payment Processor",
+        "module_key" : "payment-processor"
+    }
+    
+]

@@ -1,0 +1,523 @@
+@php
+    $userType = userType();
+    $currentDate = date('Y-m-d');
+    $userData = getUser();
+    $weightMesure = !empty($detail['marker']['weight_lbl'])
+        ? ($detail['marker']['weight_lbl'] == 'POUNDS_LBS'
+            ? 'POUNDS/LBS'
+            : 'KILOGRAMS')
+        : '';
+@endphp
+
+<div>
+
+    <div class="row">
+        <div class="col-md-12" id="HealthProfileHead">
+            <div class="row">
+                <div class="col-md-6" id="markerBlock">
+                    <div class="">
+                        <div class="health-check-wrap">
+                            <h3>Health Markers</h3>
+                            <div class="health-check">
+                                <div class="health-checkin">
+                                    <h4>Next Check In</h4>
+                                    <p>{{ formatDate($detail['markerNextDate'], 'M d, Y') }}</p>
+                                </div>
+                                <a href="{{ route('user.healthTracker.healthMarker', ['user_type' => $userType]) }}">Check
+                                    In</a>
+                            </div>
+
+                            <div class="last-checkin">
+                                <div class="last-checkin-head">
+                                    <h4>Last Check In</h4>
+                                    <p>{{ formatDate($detail['markerLastDate'], 'M d, Y') }}</p>
+                                </div>
+                                <div class="last-checkin-detail">
+                                    @if (!empty($healthSettings) && $healthSettings['weight_status'] == 'enabled')
+                                        <p>WEIGHT: <span>
+                                                {{ !empty($detail['marker']) ? $detail['marker']['weight'] . ' ' . $weightMesure : '-' }}</span>
+                                        </p>
+                                    @endif
+                                    @if (!empty($healthSettings) && $healthSettings['body_fat_status'] == 'enabled')
+                                        <p>BODY FAT:
+                                            <span>{{ !empty($detail['marker']) ? $detail['marker']['body_fat'] . '%' : '-' }}</span>
+                                        </p>
+                                    @endif
+                                    @if (!empty($healthSettings) && $healthSettings['bmi_status'] == 'enabled')
+                                        <p>BMI:
+                                            <span>{{ !empty($detail['marker']) ? $detail['marker']['bmi'] . '%' : '-' }}</span>
+                                        </p>
+                                    @endif
+                                    @if (!empty($healthSettings) && $healthSettings['body_water_status'] == 'enabled')
+                                        <p>BODY WATER:
+                                            <span>{{ !empty($detail['marker']) ? $detail['marker']['body_water'] . '%' : '-' }}</span>
+                                        </p>
+                                    @endif
+                                    @if (!empty($healthSettings) && $healthSettings['skeletal_muscle_status'] == 'enabled')
+                                        <p>SKELETAL MUSCLE:
+                                            <span>{{ !empty($detail['marker']) ? $detail['marker']['skeletal_muscle'] . '%' : '-' }}</span>
+                                        </p>
+                                    @endif
+                                </div>
+                                @if (!empty($healthSettings) && $healthSettings['health_marker_images_status'] == 'enabled')
+                                    @if (!empty($detail['marker']))
+                                        <ul class="uploaded-image-list">
+                                            @foreach ($detail['marker']['images'] as $image)
+                                                <li class="list-inline-item">
+                                                    <div class="uploaded-image-list">
+                                                        @if (!empty($image->media) && !empty($image->media->base_url))
+                                                            <a href="javascript:void(0)" class="plan-link" data-lity
+                                                                data-lity-target="{{ $image->media->base_url }}">
+                                                                <img src="{{ $image->media->base_url }}" alt="">
+                                                            </a>
+                                                        @else
+                                                            <a href="javascript:void(0)" class="plan-link" data-lity
+                                                                data-lity-target="{{ url('assets/images/default-image.png') }}">
+                                                                <img src="{{ url('assets/images/default-image.png') }}"
+                                                                    alt="">
+                                                            </a>
+                                                        @endif
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                @endif
+                            </div>
+                            <div class="checkin-cta"><a
+                                    href="{{ route('user.healthTracker.healthMarker.view', ['user_type' => $userType]) }}">View
+                                    All Check Ins</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" id="measurmentBlock">
+                    <div class="">
+                        <div class="health-check-wrap">
+                            <h3>Health Measurements</h3>
+                            <div class="health-check">
+                                <div class="health-checkin">
+                                    <h4>Next Check In</h4>
+                                    <p>{{ formatDate($detail['measurementNextDate'], 'M d, Y') }}</p>
+                                </div>
+                                <a
+                                    href="{{ route('user.healthTracker.healthMeasurement', ['user_type' => $userType]) }}">Check
+                                    In</a>
+                            </div>
+
+                            <div class="last-checkin">
+                                <div class="last-checkin-head">
+                                    <h4>Last Check In</h4>
+                                    <p>{{ formatDate($detail['measurementLastDate'], 'M d, Y') }}</p>
+                                </div>
+                                <div class="last-checkin-detail two-col">
+                                    @if (!empty($healthSettings) && $healthSettings['height_status'] == 'enabled')
+                                        @php
+                                        $inches = $detail['measurement']?$detail['measurement']['height']:1;
+                                        $feet = intdiv($inches, 12); 
+                                        $remainingInches = $inches % 12; 
+                                        @endphp
+                                        <p>HEIGHT:
+                                            <span>{{ $feet }}.{{$remainingInches}}
+                                                <span>ft</span></span>
+                                        </p>
+                                    @endif
+                                    @if (!empty($healthSettings) && $healthSettings['shoulder_status'] == 'enabled')
+                                        <p>SHOULDER:
+                                            <span>{{ !empty($detail['measurement']) ? $detail['measurement']['shoulder'] : '-' }}
+                                                <span>inches</span></span>
+                                        </p>
+                                    @endif
+                                    @if (!empty($healthSettings) && $healthSettings['chest_status'] == 'enabled')
+                                        <p>CHEST:
+                                            <span>{{ !empty($detail['measurement']) ? $detail['measurement']['chest'] : '-' }}
+                                                <span>inches</span></span>
+                                        </p>
+                                    @endif
+                                    @if (!empty($healthSettings) && $healthSettings['waist_status'] == 'enabled')
+                                        <p>WAIST:
+                                            <span>{{ !empty($detail['measurement']) ? $detail['measurement']['waist'] : '-' }}
+                                                <span>inches</span></span>
+                                        </p>
+                                    @endif
+                                    @if (!empty($healthSettings) && $healthSettings['abdomen_status'] == 'enabled')
+                                        <p>ABDOMEN:
+                                            <span>{{ !empty($detail['measurement']) ? $detail['measurement']['abdomen'] : '-' }}
+                                                <span>inches</span></span>
+                                        </p>
+                                    @endif
+                                    @if (!empty($healthSettings) && $healthSettings['hip_status'] == 'enabled')
+                                        <p>HIP: <span>{{ !empty($detail['measurement']) ? $detail['measurement']['hip'] : '-' }}
+                                                <span>inches</span></span></p>
+                                    @endif
+                                    @if (!empty($healthSettings) && $healthSettings['bicep_left_status'] == 'enabled')
+                                        <p>BICEP LEFT:
+                                            <span>{{ !empty($detail['measurement']) ? $detail['measurement']['bicep_left'] : '-' }}
+                                                <span>inches</span></span>
+                                        </p>
+                                    @endif
+                                    @if (!empty($healthSettings) && $healthSettings['bicep_right_status'] == 'enabled')
+                                        <p>BICEP RIGHT:
+                                            <span>{{ !empty($detail['measurement']) ? $detail['measurement']['bicep_right'] : '-' }}
+                                                <span>inches</span></span>
+                                        </p>
+                                    @endif
+                                    @if (!empty($healthSettings) && $healthSettings['thigh_left_status'] == 'enabled')
+                                        <p>THIGH LEFT:
+                                            <span>{{ !empty($detail['measurement']) ? $detail['measurement']['thigh_left'] : '-' }}
+                                                <span>inches</span></span>
+                                        </p>
+                                    @endif
+                                    @if (!empty($healthSettings) && $healthSettings['thigh_right_status'] == 'enabled')
+                                        <p>THIGH RIGHT:
+                                            <span>{{ !empty($detail['measurement']) ? $detail['measurement']['thigh_right'] : '-' }}
+                                                <span>inches</span></span>
+                                        </p>
+                                    @endif
+                                    @if (!empty($healthSettings) && $healthSettings['calf_left_status'] == 'enabled')
+                                        <p>CALF LEFT:
+                                            <span>{{ !empty($detail['measurement']) ? $detail['measurement']['calf_left'] : '-' }}
+                                                <span>inches</span></span>
+                                        </p>
+                                    @endif
+                                    @if (!empty($healthSettings) && $healthSettings['calf_right_status'] == 'enabled')
+                                        <p>CALF RIGHT:
+                                            <span>{{ !empty($detail['measurement']) ? $detail['measurement']['calf_right'] : '-' }}
+                                                <span>inches</span></span>
+                                        </p>
+                                    @endif
+                                    @if (!empty($healthSettings) && $healthSettings['neck_status'] == 'enabled')
+                                        <p>NECK: <span>{{ !empty($detail['measurement']) ? $detail['measurement']['neck'] : '-' }}
+                                                <span>inches</span></span></p>
+                                    @endif
+                                </div>
+                                @if (!empty($healthSettings) && $healthSettings['health_measurement_images_status'] == 'enabled')
+                                    @if (!empty($detail['measurement']))
+                                        <ul class="uploaded-image-list">
+                                            @foreach ($detail['measurement']['images'] as $image)
+                                                <li class="list-inline-item">
+                                                    <div class="uploaded-image-list">
+                                                        @if (!empty($image->media) && !empty($image->media->base_url))
+                                                            <a href="javascript:void(0)" class="plan-link" data-lity
+                                                                data-lity-target="{{ $image->media->base_url }}">
+                                                                <img style="height:50px;width:50px;"
+                                                                    src="{{ $image->media->base_url }}" alt="">
+                                                            </a>
+                                                        @else
+                                                            <a href="javascript:void(0)" class="plan-link" data-lity
+                                                                data-lity-target="{{ url('assets/images/default-image.png') }}">
+                                                                <img style="height:50px;width:50px;"
+                                                                    src="{{ url('assets/images/default-image.png') }}"
+                                                                    alt="">
+                                                            </a>
+                                                        @endif
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                @endif
+                            </div>
+                            <div class="checkin-cta"><a
+                                    href="{{ route('user.healthTracker.healthMeasurement.view', ['user_type' => $userType]) }}">View
+                                    All Check Ins</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" id="heightScaleBlock">
+            <div class="display-result" id="resultDisplay">
+                <span><strong>Date:-</strong><?php echo $currentDate; ?></span>
+                <span id="heightDisplay"></span>
+                <span id="recentHeights"></span>
+            </div>
+            <div class="scale-wrap">
+                <div class="scale">
+                    <div id="markersContainer" class="markers-container"></div>
+                    <svg id="heightScale" width="63" height="900" viewBox="0 0 63 900" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_7_121)">
+                            <path opacity="0.65" d="M62.5618 0.436707H0.438231V899.563H62.5618V0.436707Z" fill="white"
+                                stroke="black" stroke-miterlimit="10" />
+                            <path d="M48.3368 783.539H19.7992V784.334H48.3368V783.539Z" fill="black" />
+                            <path d="M48.3368 891.738H19.7992V892.532H48.3368V891.738Z" fill="black" />
+                            <path d="M48.924 883.755H43.0956V884.549H48.924V883.755Z" fill="black" />
+                            <path d="M48.924 874.697H43.0956V875.492H48.924V874.697Z" fill="black" />
+                            <path d="M48.924 865.116H43.0956V865.911H48.924V865.116Z" fill="black" />
+                            <path d="M48.924 856.067H43.0956V856.862H48.924V856.067Z" fill="black" />
+                            <path d="M48.924 847.281H43.0956V848.076H48.924V847.281Z" fill="black" />
+                            <path d="M48.924 829.315H43.0956V830.109H48.924V829.315Z" fill="black" />
+                            <path d="M48.924 820.135H43.0956V820.93H48.924V820.135Z" fill="black" />
+                            <path d="M48.924 811.218H43.0956V812.012H48.924V811.218Z" fill="black" />
+                            <path d="M48.924 802.038H43.0956V802.833H48.924V802.038Z" fill="black" />
+                            <path d="M48.924 792.85H43.0956V793.644H48.924V792.85Z" fill="black" />
+                            <path d="M48.924 838.232H39.02V839.027H48.924V838.232Z" fill="black" />
+                            <path d="M48.3368 676.144H19.7992V676.939H48.3368V676.144Z" fill="black" />
+                            <path d="M48.924 775.556H43.0956V776.351H48.924V775.556Z" fill="black" />
+                            <path d="M48.924 766.508H43.0956V767.302H48.924V766.508Z" fill="black" />
+                            <path d="M48.924 756.926H43.0956V757.721H48.924V756.926Z" fill="black" />
+                            <path d="M48.924 747.869H43.0956V748.664H48.924V747.869Z" fill="black" />
+                            <path d="M48.924 739.091H43.0956V739.886H48.924V739.091Z" fill="black" />
+                            <path d="M48.924 721.125H43.0956V721.92H48.924V721.125Z" fill="black" />
+                            <path d="M48.924 711.937H43.0956V712.732H48.924V711.937Z" fill="black" />
+                            <path d="M48.924 703.019H43.0956V703.814H48.924V703.019Z" fill="black" />
+                            <path d="M48.924 693.84H43.0956V694.634H48.924V693.84Z" fill="black" />
+                            <path d="M48.924 684.66H43.0956V685.455H48.924V684.66Z" fill="black" />
+                            <path d="M48.924 730.034H39.02V730.829H48.924V730.034Z" fill="black" />
+                            <path d="M48.3368 568.347H19.7992V569.142H48.3368V568.347Z" fill="black" />
+                            <path d="M48.924 667.759H43.0956V668.554H48.924V667.759Z" fill="black" />
+                            <path d="M48.924 658.711H43.0956V659.506H48.924V658.711Z" fill="black" />
+                            <path d="M48.924 649.13H43.0956V649.924H48.924V649.13Z" fill="black" />
+                            <path d="M48.924 640.072H43.0956V640.867H48.924V640.072Z" fill="black" />
+                            <path d="M48.924 631.294H43.0956V632.089H48.924V631.294Z" fill="black" />
+                            <path d="M48.924 613.328H43.0956V614.123H48.924V613.328Z" fill="black" />
+                            <path d="M48.924 604.14H43.0956V604.935H48.924V604.14Z" fill="black" />
+                            <path d="M48.924 595.222H43.0956V596.017H48.924V595.222Z" fill="black" />
+                            <path d="M48.924 586.043H43.0956V586.838H48.924V586.043Z" fill="black" />
+                            <path d="M48.924 576.863H43.0956V577.658H48.924V576.863Z" fill="black" />
+                            <path d="M48.924 622.237H39.02V623.032H48.924V622.237Z" fill="black" />
+                            <path d="M48.3368 459.354H19.7992V460.149H48.3368V459.354Z" fill="black" />
+                            <path d="M48.924 558.766H43.0956V559.561H48.924V558.766Z" fill="black" />
+                            <path d="M48.924 549.709H43.0956V550.504H48.924V549.709Z" fill="black" />
+                            <path d="M48.924 540.128H43.0956V540.922H48.924V540.128Z" fill="black" />
+                            <path d="M48.924 531.079H43.0956V531.874H48.924V531.079Z" fill="black" />
+                            <path d="M48.924 522.292H43.0956V523.087H48.924V522.292Z" fill="black" />
+                            <path d="M48.924 504.326H43.0956V505.121H48.924V504.326Z" fill="black" />
+                            <path d="M48.924 495.147H43.0956V495.942H48.924V495.147Z" fill="black" />
+                            <path d="M48.924 486.229H43.0956V487.024H48.924V486.229Z" fill="black" />
+                            <path d="M48.924 477.05H43.0956V477.844H48.924V477.05Z" fill="black" />
+                            <path d="M48.924 467.87H43.0956V468.665H48.924V467.87Z" fill="black" />
+                            <path d="M48.924 513.244H39.02V514.039H48.924V513.244Z" fill="black" />
+                            <path d="M48.3368 351.558H19.7992V352.352H48.3368V351.558Z" fill="black" />
+                            <path d="M48.924 450.97H43.0956V451.764H48.924V450.97Z" fill="black" />
+                            <path d="M48.924 441.912H43.0956V442.707H48.924V441.912Z" fill="black" />
+                            <path d="M48.924 432.331H43.0956V433.126H48.924V432.331Z" fill="black" />
+                            <path d="M48.924 423.282H43.0956V424.077H48.924V423.282Z" fill="black" />
+                            <path d="M48.924 414.496H43.0956V415.291H48.924V414.496Z" fill="black" />
+                            <path d="M48.924 396.53H43.0956V397.324H48.924V396.53Z" fill="black" />
+                            <path d="M48.924 387.35H43.0956V388.145H48.924V387.35Z" fill="black" />
+                            <path d="M48.924 378.433H43.0956V379.227H48.924V378.433Z" fill="black" />
+                            <path d="M48.924 369.253H43.0956V370.048H48.924V369.253Z" fill="black" />
+                            <path d="M48.924 360.073H43.0956V360.868H48.924V360.073Z" fill="black" />
+                            <path d="M48.924 405.447H39.02V406.242H48.924V405.447Z" fill="black" />
+                            <path d="M48.3368 243.35H19.7992V244.145H48.3368V243.35Z" fill="black" />
+                            <path d="M48.924 342.762H43.0956V343.557H48.924V342.762Z" fill="black" />
+                            <path d="M48.924 333.714H43.0956V334.509H48.924V333.714Z" fill="black" />
+                            <path d="M48.924 324.132H43.0956V324.927H48.924V324.132Z" fill="black" />
+                            <path d="M48.924 315.084H43.0956V315.879H48.924V315.084Z" fill="black" />
+                            <path d="M48.924 306.297H43.0956V307.092H48.924V306.297Z" fill="black" />
+                            <path d="M48.924 288.331H43.0956V289.126H48.924V288.331Z" fill="black" />
+                            <path d="M48.924 279.152H43.0956V279.946H48.924V279.152Z" fill="black" />
+                            <path d="M48.924 270.234H43.0956V271.029H48.924V270.234Z" fill="black" />
+                            <path d="M48.924 261.055H43.0956V261.849H48.924V261.055Z" fill="black" />
+                            <path d="M48.924 251.866H43.0956V252.661H48.924V251.866Z" fill="black" />
+                            <path d="M48.924 297.249H39.02V298.044H48.924V297.249Z" fill="black" />
+                            <path d="M48.3368 136.226H19.7992V137.021H48.3368V136.226Z" fill="black" />
+                            <path d="M48.924 235.638H43.0956V236.433H48.924V235.638Z" fill="black" />
+                            <path d="M48.924 226.59H43.0956V227.384H48.924V226.59Z" fill="black" />
+                            <path d="M48.924 217.008H43.0956V217.803H48.924V217.008Z" fill="black" />
+                            <path d="M48.924 207.96H43.0956V208.755H48.924V207.96Z" fill="black" />
+                            <path d="M48.924 199.173H43.0956V199.968H48.924V199.173Z" fill="black" />
+                            <path d="M48.924 181.207H43.0956V182.002H48.924V181.207Z" fill="black" />
+                            <path d="M48.924 172.027H43.0956V172.822H48.924V172.027Z" fill="black" />
+                            <path d="M48.924 163.11H43.0956V163.905H48.924V163.11Z" fill="black" />
+                            <path d="M48.924 153.93H43.0956V154.725H48.924V153.93Z" fill="black" />
+                            <path d="M48.924 144.742H43.0956V145.537H48.924V144.742Z" fill="black" />
+                            <path d="M48.924 190.125H39.02V190.919H48.924V190.125Z" fill="black" />
+                            <path d="M48.3368 31.7137H19.7992V32.5085H48.3368V31.7137Z" fill="black" />
+                            <path d="M48.924 131.126H43.0956V131.92H48.924V131.126Z" fill="black" />
+                            <path d="M48.924 122.077H43.0956V122.872H48.924V122.077Z" fill="black" />
+                            <path d="M48.924 112.496H43.0956V113.29H48.924V112.496Z" fill="black" />
+                            <path d="M48.924 103.438H43.0956V104.233H48.924V103.438Z" fill="black" />
+                            <path d="M48.924 94.6606H43.0956V95.4554H48.924V94.6606Z" fill="black" />
+                            <path d="M48.924 76.6944H43.0956V77.4892H48.924V76.6944Z" fill="black" />
+                            <path d="M48.924 67.5061H43.0956V68.3009H48.924V67.5061Z" fill="black" />
+                            <path d="M48.924 58.5886H43.0956V59.3834H48.924V58.5886Z" fill="black" />
+                            <path d="M48.924 49.409H43.0956V50.2038H48.924V49.409Z" fill="black" />
+                            <path d="M48.924 40.2294H43.0956V41.0242H48.924V40.2294Z" fill="black" />
+                            <path d="M48.924 85.6033H39.02V86.3981H48.924V85.6033Z" fill="black" />
+                            <path
+                                d="M26.878 235.973C26.702 235.085 26.154 234.641 25.234 234.641C24.522 234.641 23.99 234.917 23.638 235.469C23.286 236.013 23.114 236.913 23.122 238.169C23.306 237.753 23.61 237.429 24.034 237.197C24.466 236.957 24.946 236.837 25.474 236.837C26.298 236.837 26.954 237.093 27.442 237.605C27.938 238.117 28.186 238.825 28.186 239.729C28.186 240.273 28.078 240.761 27.862 241.193C27.654 241.625 27.334 241.969 26.902 242.225C26.478 242.481 25.962 242.609 25.354 242.609C24.53 242.609 23.886 242.425 23.422 242.057C22.958 241.689 22.634 241.181 22.45 240.533C22.266 239.885 22.174 239.085 22.174 238.133C22.174 235.197 23.198 233.729 25.246 233.729C26.03 233.729 26.646 233.941 27.094 234.365C27.542 234.789 27.806 235.325 27.886 235.973H26.878ZM25.246 237.761C24.902 237.761 24.578 237.833 24.274 237.977C23.97 238.113 23.722 238.325 23.53 238.613C23.346 238.893 23.254 239.237 23.254 239.645C23.254 240.253 23.43 240.749 23.782 241.133C24.134 241.509 24.638 241.697 25.294 241.697C25.854 241.697 26.298 241.525 26.626 241.181C26.962 240.829 27.13 240.357 27.13 239.765C27.13 239.141 26.97 238.653 26.65 238.301C26.33 237.941 25.862 237.761 25.246 237.761Z"
+                                fill="black" />
+                            <path
+                                d="M27.382 129.175L24.046 136.999H22.942L26.326 129.283H21.694V128.347H27.382V129.175Z"
+                                fill="black" />
+                            <path
+                                d="M23.626 26.2008C23.178 26.0248 22.834 25.7688 22.594 25.4328C22.354 25.0968 22.234 24.6888 22.234 24.2088C22.234 23.7768 22.342 23.3888 22.558 23.0448C22.774 22.6928 23.094 22.4168 23.518 22.2168C23.95 22.0088 24.47 21.9048 25.078 21.9048C25.686 21.9048 26.202 22.0088 26.626 22.2168C27.058 22.4168 27.382 22.6928 27.598 23.0448C27.822 23.3888 27.934 23.7768 27.934 24.2088C27.934 24.6728 27.81 25.0808 27.562 25.4328C27.314 25.7768 26.974 26.0328 26.542 26.2008C27.038 26.3528 27.43 26.6208 27.718 27.0048C28.014 27.3808 28.162 27.8368 28.162 28.3728C28.162 28.8928 28.034 29.3488 27.778 29.7408C27.522 30.1248 27.158 30.4248 26.686 30.6408C26.222 30.8488 25.686 30.9528 25.078 30.9528C24.47 30.9528 23.934 30.8488 23.47 30.6408C23.014 30.4248 22.658 30.1248 22.402 29.7408C22.146 29.3488 22.018 28.8928 22.018 28.3728C22.018 27.8368 22.162 27.3768 22.45 26.9928C22.738 26.6088 23.13 26.3448 23.626 26.2008ZM26.878 24.3408C26.878 23.8528 26.718 23.4768 26.398 23.2128C26.078 22.9488 25.638 22.8168 25.078 22.8168C24.526 22.8168 24.09 22.9488 23.77 23.2128C23.45 23.4768 23.29 23.8568 23.29 24.3528C23.29 24.8008 23.454 25.1608 23.782 25.4328C24.118 25.7048 24.55 25.8408 25.078 25.8408C25.614 25.8408 26.046 25.7048 26.374 25.4328C26.71 25.1528 26.878 24.7888 26.878 24.3408ZM25.078 26.6808C24.486 26.6808 24.002 26.8208 23.626 27.1008C23.25 27.3728 23.062 27.7848 23.062 28.3368C23.062 28.8488 23.242 29.2608 23.602 29.5728C23.97 29.8848 24.462 30.0408 25.078 30.0408C25.694 30.0408 26.182 29.8848 26.542 29.5728C26.902 29.2608 27.082 28.8488 27.082 28.3368C27.082 27.8008 26.898 27.3928 26.53 27.1128C26.162 26.8248 25.678 26.6808 25.078 26.6808Z"
+                                fill="black" />
+                            <path
+                                d="M25.2333 881.92C25.2333 880.296 25.3823 878.994 25.6803 878.008C25.9783 877.021 26.4165 876.252 26.995 875.719C27.5822 875.186 28.3097 874.916 29.1949 874.916C29.8435 874.916 30.422 875.064 30.9128 875.361C31.4036 875.658 31.8068 876.086 32.1311 876.645C32.4553 877.204 32.7008 877.885 32.8848 878.689C33.0689 879.492 33.1565 880.575 33.1565 881.929C33.1565 883.536 33.0075 884.838 32.7183 885.825C32.4291 886.812 31.9908 887.58 31.4036 888.113C30.8164 888.654 30.0801 888.925 29.1949 888.925C28.0205 888.925 27.1002 888.454 26.4341 887.502C25.6365 886.357 25.2333 884.497 25.2333 881.92ZM26.7671 881.92C26.7671 884.174 27.0038 885.667 27.4683 886.418C27.9328 887.161 28.5113 887.536 29.1949 887.536C29.8785 887.536 30.457 887.161 30.9215 886.41C31.3861 885.659 31.6227 884.165 31.6227 881.92C31.6227 879.676 31.3861 878.165 30.9215 877.422C30.457 876.68 29.8698 876.313 29.1774 876.313C28.485 876.313 27.9416 876.636 27.5384 877.291C27.0213 878.13 26.7671 879.667 26.7671 881.92Z"
+                                fill="black" />
+                            <path
+                                d="M27.574 343.842H23.362V346.578C23.546 346.322 23.818 346.114 24.178 345.954C24.538 345.786 24.926 345.702 25.342 345.702C26.006 345.702 26.546 345.842 26.962 346.122C27.378 346.394 27.674 346.75 27.85 347.19C28.034 347.622 28.126 348.082 28.126 348.57C28.126 349.146 28.018 349.662 27.802 350.118C27.586 350.574 27.254 350.934 26.806 351.198C26.366 351.462 25.818 351.594 25.162 351.594C24.322 351.594 23.642 351.378 23.122 350.946C22.602 350.514 22.286 349.938 22.174 349.218H23.242C23.346 349.674 23.566 350.03 23.902 350.286C24.238 350.542 24.662 350.67 25.174 350.67C25.806 350.67 26.282 350.482 26.602 350.106C26.922 349.722 27.082 349.218 27.082 348.594C27.082 347.97 26.922 347.49 26.602 347.154C26.282 346.81 25.81 346.638 25.186 346.638C24.762 346.638 24.39 346.742 24.07 346.95C23.758 347.15 23.53 347.426 23.386 347.778H22.354V342.882H27.574V343.842Z"
+                                fill="black" />
+                            <path
+                                d="M39.6 25.324H38.22V31H37.128V25.324H36.276V24.424H37.128V23.956C37.128 23.22 37.316 22.684 37.692 22.348C38.076 22.004 38.688 21.832 39.528 21.832V22.744C39.048 22.744 38.708 22.84 38.508 23.032C38.316 23.216 38.22 23.524 38.22 23.956V24.424H39.6V25.324ZM42.2052 25.324V29.2C42.2052 29.52 42.2732 29.748 42.4092 29.884C42.5452 30.012 42.7812 30.076 43.1172 30.076H43.9212V31H42.9372C42.3292 31 41.8732 30.86 41.5692 30.58C41.2652 30.3 41.1132 29.84 41.1132 29.2V25.324H40.2612V24.424H41.1132V22.768H42.2052V24.424H43.9212V25.324H42.2052Z"
+                                fill="black" />
+                            <path
+                                d="M21.778 458.282V457.454L25.99 451.622H27.298V457.334H28.498V458.282H27.298V460.214H26.218V458.282H21.778ZM26.266 452.762L23.038 457.334H26.266V452.762Z"
+                                fill="black" />
+                            <path
+                                d="M22.018 561.763C22.074 561.027 22.358 560.451 22.87 560.035C23.382 559.619 24.046 559.411 24.862 559.411C25.406 559.411 25.874 559.511 26.266 559.711C26.666 559.903 26.966 560.167 27.166 560.503C27.374 560.839 27.478 561.219 27.478 561.643C27.478 562.139 27.334 562.567 27.046 562.927C26.766 563.287 26.398 563.519 25.942 563.623V563.683C26.462 563.811 26.874 564.063 27.178 564.439C27.482 564.815 27.634 565.307 27.634 565.915C27.634 566.371 27.53 566.783 27.322 567.151C27.114 567.511 26.802 567.795 26.386 568.003C25.97 568.211 25.47 568.315 24.886 568.315C24.038 568.315 23.342 568.095 22.798 567.655C22.254 567.207 21.95 566.575 21.886 565.759H22.942C22.998 566.239 23.194 566.631 23.53 566.935C23.866 567.239 24.314 567.391 24.874 567.391C25.434 567.391 25.858 567.247 26.146 566.959C26.442 566.663 26.59 566.283 26.59 565.819C26.59 565.219 26.39 564.787 25.99 564.523C25.59 564.259 24.986 564.127 24.178 564.127H23.902V563.215H24.19C24.926 563.207 25.482 563.087 25.858 562.855C26.234 562.615 26.422 562.247 26.422 561.751C26.422 561.327 26.282 560.987 26.002 560.731C25.73 560.475 25.338 560.347 24.826 560.347C24.33 560.347 23.93 560.475 23.626 560.731C23.322 560.987 23.142 561.331 23.086 561.763H22.018Z"
+                                fill="black" />
+                            <path
+                                d="M21.91 675.429C22.926 674.613 23.722 673.945 24.298 673.425C24.874 672.897 25.358 672.349 25.75 671.781C26.15 671.205 26.35 670.641 26.35 670.089C26.35 669.569 26.222 669.161 25.966 668.865C25.718 668.561 25.314 668.409 24.754 668.409C24.21 668.409 23.786 668.581 23.482 668.925C23.186 669.261 23.026 669.713 23.002 670.281H21.946C21.978 669.385 22.25 668.693 22.762 668.205C23.274 667.717 23.934 667.473 24.742 667.473C25.566 667.473 26.218 667.701 26.698 668.157C27.186 668.613 27.43 669.241 27.43 670.041C27.43 670.705 27.23 671.353 26.83 671.985C26.438 672.609 25.99 673.161 25.486 673.641C24.982 674.113 24.338 674.665 23.554 675.297H27.682V676.209H21.91V675.429Z"
+                                fill="black" />
+                            <path d="M21.754 776.675V775.679H24.01V784.355H22.906V776.675H21.754Z" fill="black" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_7_121">
+                                <rect width="63" height="900" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <div class="boy-container">
+                        <span id="boy">
+                            <span class="boy-info" id="boy-info"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        heightRulerGraphics();
+        var heightSetting = "<?php echo ! empty($healthSettings) ? $healthSettings['height_status'] : ''; ?>";
+        if (heightSetting !== '' && heightSetting === 'enabled') {
+            $('#heightScaleBlock').show();
+            $('#HealthProfileHead').removeClass("col-md-12").addClass("col-md-6 border-r ");
+            $('#markerBlock').removeClass("col-md-6").addClass("col-md-12 mb-4");
+            $('#measurmentBlock').removeClass("col-md-6").addClass("col-md-12");
+        } else {
+            $('#heightScaleBlock').hide();
+            $('#markerBlock, #measurmentBlock').removeClass("col-md-4 border-r").addClass("col-md-6");
+            $('#HealthProfileHead').removeClass("col-md-6").addClass("col-md-12");
+        }
+    });
+
+    function heightRulerGraphics() {
+        let newSVGContent = '';
+        const userGender = "<?php echo ! empty($userData) ? $userData->gender : ''; ?>";
+        const userAge = "<?php echo ! empty($userData) ? $userData->age : ''; ?>";
+
+        let genderGraphics = 'male'; // Default
+        if (userAge !== '' && userAge > 10) {
+            genderGraphics = (userGender === 'female') ? 'female' : 'male';
+        } else if (userAge !== '' && userAge <= 10) {
+            genderGraphics = (userGender === 'female') ? 'female_under_10' : 'male_under_10';
+        }
+
+        // Load SVG based on gender
+        switch (genderGraphics) {
+            case 'male':
+                newSVGContent = @json(view('health-tracker.height-graphics.male')->render());
+                break;
+            case 'female':
+                newSVGContent = @json(view('health-tracker.height-graphics.female')->render());
+                break;
+            case 'male_under_10':
+                newSVGContent = @json(view('health-tracker.height-graphics.male_under_10')->render());
+                break;
+            case 'female_under_10':
+                newSVGContent = @json(view('health-tracker.height-graphics.female_under_10')->render());
+                break;
+            default:
+                newSVGContent = @json(view('health-tracker.height-graphics.male')->render());
+        }
+
+        const boy = document.getElementById('boy');
+        const heightDisplay = document.getElementById('heightDisplay');
+        const recentHeights = document.getElementById('recentHeights');
+        const markersContainer = document.getElementById('markersContainer');
+
+        boy.innerHTML = `<span class="boy-info" id="boy-info"></span> ${newSVGContent}`;
+
+        const measurementHistory = <?php echo ! empty($detail['measurement_history']) ? json_encode($detail['measurement_history'], JSON_HEX_TAG) : '[]'; ?>;
+        const measurmentObj = <?php echo ! empty($detail['measurement']) ? json_encode($detail['measurement'], JSON_HEX_TAG) : "'-'"; ?>;
+
+        // ✅ Convert current user height (in inches) to feet + inches
+        let userHeight = measurmentObj.height ? parseFloat(measurmentObj.height) : 0;
+        let feet = Math.floor(userHeight / 12);
+        let inches = Math.round(userHeight % 12);
+        let heightValue = `${feet}.${inches.toString().padStart(2, '0')}`; // e.g., "5.10"
+        let heightFeetDecimal = (feet * 12 + inches) / 12; // For scaling
+
+        const maxHeight = 681;
+        const scaleHeight = maxHeight / 8;
+        const currentDate = new Date().toLocaleDateString();
+
+        if (heightFeetDecimal >= 0 && heightFeetDecimal <= 8) {
+            const newHeight = heightFeetDecimal * scaleHeight;
+
+            // Adjust size based on height
+            if (heightFeetDecimal >= 3 && heightFeetDecimal < 5) {
+                boy.style.width = '150px';
+                boy.style.height = `${newHeight + 8}px`;
+            } else if (heightFeetDecimal >= 5 && heightFeetDecimal <= 8) {
+                boy.style.width = '270px';
+                boy.style.height = `${newHeight + 3}px`;
+            } else if (heightFeetDecimal >= 0 && heightFeetDecimal < 2) {
+                boy.style.width = '50px';
+                boy.style.height = `${newHeight + 7}px`;
+            } else {
+                boy.style.width = '80px';
+                boy.style.height = `${newHeight + 6}px`;
+            }
+
+            if (!boy.classList.contains('active')) {
+                boy.classList.add('active');
+            }
+
+            // ✅ Loop through history and plot markers
+            measurementHistory.forEach(item => {
+                const itemHeight = item.height ? parseFloat(item.height) : 0;
+                const itemFeet = Math.floor(itemHeight / 12);
+                const itemInches = Math.round(itemHeight % 12);
+                const heightStr = `${itemFeet}.${itemInches.toString().padStart(2, '0')}`;
+                const heightDecimal = (itemFeet * 12 + itemInches) / 12;
+                const positionPercentage = (heightDecimal / 8) * 100;
+
+                const marker = document.createElement('div');
+                marker.classList.add('marker');
+                marker.style.top = `${100 - positionPercentage}%`;
+
+                if (heightFeetDecimal >= 3 && heightFeetDecimal < 5) {
+                    marker.style.bottom = `${newHeight + 4}px`;
+                } else if (heightFeetDecimal >= 5 && heightFeetDecimal <= 8) {
+                    marker.style.bottom = `${newHeight}px`;
+                } else if (heightFeetDecimal >= 0 && heightFeetDecimal < 2) {
+                    marker.style.bottom = `${newHeight + 4}px`;
+                } else {
+                    marker.style.bottom = `${newHeight + 2}px`;
+                }
+
+                const tooltip = document.createElement('span');
+                tooltip.classList.add('tooltip');
+                tooltip.innerText = `Height: ${heightStr}\nDate: ${item.date ? formatDate(item.date) : '-'}`;
+                marker.appendChild(tooltip);
+                markersContainer.appendChild(marker);
+            });
+
+            // ✅ Display current height info
+            const boyInfoContainer = document.createElement('div');
+            boyInfoContainer.id = 'boyInfoContainer';
+            boyInfoContainer.innerHTML =
+                `<p><strong>Height:</strong> ${heightValue} <strong>Date:</strong> ${measurmentObj.date ? formatDate(measurmentObj.date) : '-'}</p>`;
+            boy.appendChild(boyInfoContainer);
+        } else {
+            console.log('Please enter a height between 0 and 8.');
+        }
+    }
+
+    // Helper function to format date in mm-dd-yyyy format
+    function formatDate(dateStr) {
+        const date = new Date(dateStr); // Create a date object from the date string
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Get the month, add leading zero if needed
+        const day = String(date.getDate()).padStart(2, '0'); // Get the day, add leading zero if needed
+        const year = date.getFullYear(); // Get the year
+        return `${month}-${day}-${year}`; // Return in mm-dd-yyyy format
+    }
+</script>

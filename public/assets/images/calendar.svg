@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="19.2" height="19.2" viewBox="0 0 19.2 19.2">
+  <g id="calendar-icon" transform="translate(-2.4 -2.4)">
+    <path id="Path_75745" data-name="Path 75745" d="M3,6H3Zm18,4.6H3V9.4H21ZM3,10v0ZM21,6V6Z" fill="#222"/>
+    <path id="Rectangle_9861" data-name="Rectangle 9861" d="M2-.6H16A2.6,2.6,0,0,1,18.6,2V13A2.6,2.6,0,0,1,16,15.6H2A2.6,2.6,0,0,1-.6,13V2A2.6,2.6,0,0,1,2-.6Zm14,15A1.4,1.4,0,0,0,17.4,13V2A1.4,1.4,0,0,0,16,.6H2A1.4,1.4,0,0,0,.6,2V13A1.4,1.4,0,0,0,2,14.4Z" transform="translate(3 6)" fill="#222"/>
+    <path id="Path_75746" data-name="Path 75746" d="M7,6.6A.6.6,0,0,1,6.4,6V3A.6.6,0,0,1,7.6,3V6A.6.6,0,0,1,7,6.6Z" fill="#222"/>
+    <path id="Path_75747" data-name="Path 75747" d="M17,6.6a.6.6,0,0,1-.6-.6V3a.6.6,0,0,1,1.2,0V6A.6.6,0,0,1,17,6.6Z" fill="#222"/>
+    <rect id="Rectangle_9862" data-name="Rectangle 9862" width="4" height="2" rx="0.5" transform="translate(7 12)" fill="#222"/>
+    <rect id="Rectangle_9863" data-name="Rectangle 9863" width="4" height="2" rx="0.5" transform="translate(7 16)" fill="#222"/>
+    <rect id="Rectangle_9864" data-name="Rectangle 9864" width="4" height="2" rx="0.5" transform="translate(13 12)" fill="#222"/>
+    <rect id="Rectangle_9865" data-name="Rectangle 9865" width="4" height="2" rx="0.5" transform="translate(13 16)" fill="#222"/>
+  </g>
+</svg>

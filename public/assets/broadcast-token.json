@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "token_key": "user_name",
+    "name": "Screen"
+  },
+   {
+    "id": "2",
+    "token_key": "first_name",
+    "name": "First Name"
+  },
+   {
+    "id": "3",
+    "token_key": "last_name",
+    "name": "Last Name"
+  },
+   {
+    "id": "4",
+    "token_key": "email",
+    "name": "Email"
+  },
+   {
+    "id": "5",
+    "token_key": "signup_date",
+    "name": "Signup Date"
+  },
+   {
+    "id": "6",
+    "token_key": "reset_password_url",
+    "name": "Reset Password URL"
+  },
+   {
+    "id": "7",
+    "token_key": "renewal_date",
+    "name": "Renewal Date"
+  },
+   {
+    "id": "8",
+    "token_key": "next_billing_date",
+    "name": "Next Billing Date"
+  },
+   {
+    "id": "9",
+    "token_key": "next_billing_amount",
+    "name": "Next Billing Amount"
+  },
+  {
+    "id": "10",
+    "token_key": "last_billing_date",
+    "name": "Next Billing Amount"
+  },
+  {
+    "id": "11",
+    "token_key": "last_billing_amount",
+    "name": "Next Billing Amount"
+  },
+  {
+    "id": "12",
+    "token_key": "next_workout_date",
+    "name": "Next Workout Date"
+  },
+  {
+    "id": "13",
+    "token_key": "last_workout_date",
+    "name": "Last Workout Date"
+  },
+  {
+    "id": "14",
+    "token_key": "last_login_date",
+    "name": "Last Login Date"
+  }
+]

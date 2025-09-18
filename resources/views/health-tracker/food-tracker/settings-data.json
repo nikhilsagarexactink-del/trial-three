@@ -1,0 +1,13 @@
+
+    {
+        "calories_status" : "enabled",
+        "carbohydrates_status" : "enabled",
+        "proteins_status" : "enabled",
+        "meals" : [
+            1,
+            4,
+            5,
+            7,
+            8
+        ]
+    }

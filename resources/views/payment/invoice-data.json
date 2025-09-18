@@ -1,0 +1,268 @@
+{
+  "id": "evt_1RYNQFLaz1e579ovIxZwHjV9",
+  "object": "event",
+  "api_version": "2024-04-10",
+  "created": 1749543641,
+  "data": {
+    "object": {
+      "id": "in_1RYNQBLaz1e579ovB3fVZFul",
+      "object": "invoice",
+      "account_country": "US",
+      "account_name": "Turbo Charged Athletics LLC",
+      "account_tax_ids": null,
+      "amount_due": 500,
+      "amount_overpaid": 0,
+      "amount_paid": 500,
+      "amount_remaining": 0,
+      "amount_shipping": 0,
+      "application": null,
+      "application_fee_amount": null,
+      "attempt_count": 1,
+      "attempted": true,
+      "auto_advance": false,
+      "automatic_tax": {
+        "disabled_reason": null,
+        "enabled": false,
+        "liability": null,
+        "provider": null,
+        "status": null
+      },
+      "automatically_finalizes_at": null,
+      "billing_reason": "subscription_create",
+      "charge": "ch_3RYNQBLaz1e579ov0vNuEJF3",
+      "collection_method": "charge_automatically",
+      "created": 1749543639,
+      "currency": "usd",
+      "custom_fields": null,
+      "customer": "cus_STK1qhaMY3KOIH",
+      "customer_address": null,
+      "customer_email": "muskan@mailinator.com",
+      "customer_name": "Muskan Joshi",
+      "customer_phone": null,
+      "customer_shipping": null,
+      "customer_tax_exempt": "none",
+      "customer_tax_ids": [
+      ],
+      "default_payment_method": null,
+      "default_source": null,
+      "default_tax_rates": [
+      ],
+      "description": null,
+      "discount": null,
+      "discounts": [
+      ],
+      "due_date": null,
+      "effective_at": 1749543639,
+      "ending_balance": 0,
+      "footer": null,
+      "from_invoice": null,
+      "hosted_invoice_url": "https://invoice.stripe.com/i/acct_1POMStLaz1e579ov/test_YWNjdF8xUE9NU3RMYXoxZTU3OW92LF9TVEs0QmV2UkpMWm9TMjVWQWFlTjBQZnRlbUFqUGZiLDE0MDA4NDQ0Mw0200iKR14dzu?s=ap",
+      "invoice_pdf": "https://pay.stripe.com/invoice/acct_1POMStLaz1e579ov/test_YWNjdF8xUE9NU3RMYXoxZTU3OW92LF9TVEs0QmV2UkpMWm9TMjVWQWFlTjBQZnRlbUFqUGZiLDE0MDA4NDQ0Mw0200iKR14dzu/pdf?s=ap",
+      "issuer": {
+        "type": "self"
+      },
+      "last_finalization_error": null,
+      "latest_revision": null,
+      "lines": {
+        "object": "list",
+        "data": [
+          {
+            "id": "il_1RYNQBLaz1e579ovkzxmBGx9",
+            "object": "line_item",
+            "amount": 500,
+            "amount_excluding_tax": 500,
+            "currency": "usd",
+            "description": "1 × New Test Plan (at $5.00 / month)",
+            "discount_amounts": [
+            ],
+            "discountable": true,
+            "discounts": [
+            ],
+            "invoice": "in_1RYNQBLaz1e579ovB3fVZFul",
+            "livemode": false,
+            "metadata": {
+            },
+            "parent": {
+              "invoice_item_details": null,
+              "subscription_item_details": {
+                "invoice_item": null,
+                "proration": false,
+                "proration_details": {
+                  "credited_items": null
+                },
+                "subscription": "sub_1RYNQBLaz1e579ovYV9omo6h",
+                "subscription_item": "si_STK4X9vod1j9zm"
+              },
+              "type": "subscription_item_details"
+            },
+            "period": {
+              "end": 1752135639,
+              "start": 1749543639
+            },
+            "plan": {
+              "id": "price_1RBW3xLaz1e579ovw18kDcQP",
+              "object": "plan",
+              "active": true,
+              "aggregate_usage": null,
+              "amount": 500,
+              "amount_decimal": "500",
+              "billing_scheme": "per_unit",
+              "created": 1744095313,
+              "currency": "usd",
+              "interval": "month",
+              "interval_count": 1,
+              "livemode": false,
+              "metadata": {
+              },
+              "meter": null,
+              "nickname": null,
+              "product": "prod_S5hSvKQXEXn99Q",
+              "tiers_mode": null,
+              "transform_usage": null,
+              "trial_period_days": null,
+              "usage_type": "licensed"
+            },
+            "pretax_credit_amounts": [
+            ],
+            "price": {
+              "id": "price_1RBW3xLaz1e579ovw18kDcQP",
+              "object": "price",
+              "active": true,
+              "billing_scheme": "per_unit",
+              "created": 1744095313,
+              "currency": "usd",
+              "custom_unit_amount": null,
+              "livemode": false,
+              "lookup_key": null,
+              "metadata": {
+              },
+              "nickname": null,
+              "product": "prod_S5hSvKQXEXn99Q",
+              "recurring": {
+                "aggregate_usage": null,
+                "interval": "month",
+                "interval_count": 1,
+                "meter": null,
+                "trial_period_days": null,
+                "usage_type": "licensed"
+              },
+              "tax_behavior": "unspecified",
+              "tiers_mode": null,
+              "transform_quantity": null,
+              "type": "recurring",
+              "unit_amount": 500,
+              "unit_amount_decimal": "500"
+            },
+            "pricing": {
+              "price_details": {
+                "price": "price_1RBW3xLaz1e579ovw18kDcQP",
+                "product": "prod_S5hSvKQXEXn99Q"
+              },
+              "type": "price_details",
+              "unit_amount_decimal": "500"
+            },
+            "proration": false,
+            "proration_details": {
+              "credited_items": null
+            },
+            "quantity": 1,
+            "subscription": "sub_1RYNQBLaz1e579ovYV9omo6h",
+            "subscription_item": "si_STK4X9vod1j9zm",
+            "tax_amounts": [
+            ],
+            "tax_rates": [
+            ],
+            "taxes": [
+            ],
+            "type": "subscription",
+            "unit_amount_excluding_tax": "500"
+          }
+        ],
+        "has_more": false,
+        "total_count": 1,
+        "url": "/v1/invoices/in_1RYNQBLaz1e579ovB3fVZFul/lines"
+      },
+      "livemode": false,
+      "metadata": {
+      },
+      "next_payment_attempt": null,
+      "number": "NXVJS767-0001",
+      "on_behalf_of": null,
+      "paid": true,
+      "paid_out_of_band": false,
+      "parent": {
+        "quote_details": null,
+        "subscription_details": {
+          "metadata": {
+          },
+          "subscription": "sub_1RYNQBLaz1e579ovYV9omo6h"
+        },
+        "type": "subscription_details"
+      },
+      "payment_intent": "pi_3RYNQBLaz1e579ov0mvSLBnC",
+      "payment_settings": {
+        "default_mandate": null,
+        "payment_method_options": {
+          "acss_debit": null,
+          "bancontact": null,
+          "card": {
+            "request_three_d_secure": "automatic"
+          },
+          "customer_balance": null,
+          "konbini": null,
+          "sepa_debit": null,
+          "us_bank_account": null
+        },
+        "payment_method_types": [
+          "card"
+        ]
+      },
+      "period_end": 1749543639,
+      "period_start": 1749543639,
+      "post_payment_credit_notes_amount": 0,
+      "pre_payment_credit_notes_amount": 0,
+      "quote": null,
+      "receipt_number": null,
+      "rendering": null,
+      "shipping_cost": null,
+      "shipping_details": null,
+      "starting_balance": 0,
+      "statement_descriptor": null,
+      "status": "paid",
+      "status_transitions": {
+        "finalized_at": 1749543639,
+        "marked_uncollectible_at": null,
+        "paid_at": 1749543641,
+        "voided_at": null
+      },
+      "subscription": "sub_1RYNQBLaz1e579ovYV9omo6h",
+      "subscription_details": {
+        "metadata": {
+        }
+      },
+      "subtotal": 500,
+      "subtotal_excluding_tax": 500,
+      "tax": null,
+      "test_clock": null,
+      "total": 500,
+      "total_discount_amounts": [
+      ],
+      "total_excluding_tax": 500,
+      "total_pretax_credit_amounts": [
+      ],
+      "total_tax_amounts": [
+      ],
+      "total_taxes": [
+      ],
+      "transfer_data": null,
+      "webhooks_delivered_at": 1749543639
+    }
+  },
+  "livemode": false,
+  "pending_webhooks": 2,
+  "request": {
+    "id": null,
+    "idempotency_key": "3083d641-8c6d-4f4b-9f53-8405ed47b319"
+  },
+  "type": "invoice.paid"
+}
